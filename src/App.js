@@ -37,6 +37,13 @@ function App() {
         toDos: filteredTodo,
       };
     });
+
+    setCompletedToDos((prevCompleted) => {
+      const removeCompleted = prevCompleted.tasks.filter((completed) => completed.id !== id)
+      return {
+        tasks: removeCompleted
+      } 
+    })
   }
 
   function handleComplete(id, checked) {

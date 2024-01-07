@@ -1,0 +1,42 @@
+.div1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 10rem 4rem 10rem;
+  padding-bottom: 16rem;
+  color: black;
+  border: 2px double rgb(79, 17, 17);
+  border-radius: 15px 50px;
+  background-color: rgba(137, 123, 104, 0.608);
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 10rem 4rem 10rem;
+  padding-bottom: 16rem;
+  color: black;
+  border-radius: 15px 50px;
+  border: 2px double rgb(79, 17, 17);
+  background-color: rgba(100, 94, 85, 0.608);
+}
+
+.div h1 {
+  margin: 3rem;
+  margin-bottom: 1rem;
+}
+
+.noTasks {
+  font-size: 1.2rem;
+}
+
+.div ul {
+  padding: 0 4rem 0 4rem;
+}
+
+.tasks {
+  font-size: 1.5rem;
+}

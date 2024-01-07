@@ -8,16 +8,21 @@ function Input({ onSelect }) {
 
   const isValid = addToDo.length !== 0;
 
-  function handleAddToDo() {
+  async function handleAddToDo(value) {
     setDidEdit(true);
-    if (addToDo.length > 0) {
-      return onSelect(addToDo);
+    const newtodo = addToDo
+    if (isValid) {
+      setDidEdit(false)
+      setAddToDo('')
+      return onSelect(newtodo);
     }
   }
 
+  console.log(addToDo);
+
   function handleChange(value) {
     setAddToDo(value);
-    setDidEdit(false)
+    setDidEdit(false);
   }
 
   function onBlur() {
@@ -32,9 +37,13 @@ function Input({ onSelect }) {
           onChange={(e) => handleChange(e.target.value)}
           className={classes.input}
           type="text"
+          value={addToDo}
           required
         />
-        <button onClick={handleAddToDo} className={classes.button}>
+        <button
+          onClick={() => handleAddToDo(addToDo)}
+          className={classes.button}
+        >
           Add
         </button>
       </main>
