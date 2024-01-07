@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import classes from "./Input.module.css";
+import Error from "../Error/Error";
+
+function Input({ onSelect }) {
+  const [addToDo, setAddToDo] = useState("");
+  const [didEdit, setDidEdit] = useState(false);
+
+  const isValid = addToDo.length !== 0;
+
+  function handleAddToDo() {
+    setDidEdit(true);
+    if (addToDo.length > 0) {
+      return onSelect(addToDo);
+    }
+  }
+
+  function handleChange(value) {
+    setAddToDo(value);
+    setDidEdit(false)
+  }
+
+  function onBlur() {
+    setDidEdit(false);
+  }
+
+  return (
+    <>
+      <main className={classes.main}>
+        <input
+          onBlur={onBlur}
+          onChange={(e) => handleChange(e.target.value)}
+          className={classes.input}
+          type="text"
+          required
+        />
+        <button onClick={handleAddToDo} className={classes.button}>
+          Add
+        </button>
+      </main>
+      {didEdit && !isValid && <Error title="Enter a valid to-do!" />}
+    </>
+  );
+}
+
+export default Input;

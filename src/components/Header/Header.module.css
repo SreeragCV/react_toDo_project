@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem;
+  margin-bottom: 0rem;
+}
+
+.todo-logo{
+    max-height: 5rem;
+    transform: rotate(18deg);
+    padding-left: 1rem;
+}
+
+.p-heading{
+  text-align: center;
+}
+
+.h3{
+  font-family:monospace;
+  font-size: 22px;
+  padding-right: 24px;
+}
+
+.to{
+  color: cadetblue;
+}
+
+.do{
+  color: burlywood;
+}
