@@ -8,17 +8,15 @@ function Input({ onSelect }) {
 
   const isValid = addToDo.length !== 0;
 
-  async function handleAddToDo(value) {
+  async function handleAddToDo() {
     setDidEdit(true);
-    const newtodo = addToDo
+    const newtodo = addToDo;
     if (isValid) {
-      setDidEdit(false)
-      setAddToDo('')
+      setDidEdit(false);
+      setAddToDo("");
       return onSelect(newtodo);
     }
   }
-
-  console.log(addToDo);
 
   function handleChange(value) {
     setAddToDo(value);
@@ -40,10 +38,7 @@ function Input({ onSelect }) {
           value={addToDo}
           required
         />
-        <button
-          onClick={() => handleAddToDo(addToDo)}
-          className={classes.button}
-        >
+        <button onClick={handleAddToDo} className={classes.button}>
           Add
         </button>
       </main>
